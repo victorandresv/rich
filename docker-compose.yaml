@@ -1,0 +1,21 @@
+version: "3.2"
+
+services:
+
+  talaron:
+    container_name: rich-python
+    image: tiangolo/uvicorn-gunicorn-fastapi:python3.7
+    volumes:
+     - ../rich/:/app
+    expose:
+      - 8000
+    ports:
+      - 8000:8000
+    environment:
+      - TALARON_URI=http://172.23.0.6:3500
+    entrypoint: /app/entrypoint.sh
+
+networks:
+  default:
+    external:
+      name: databases_default_network
