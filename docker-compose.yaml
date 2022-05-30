@@ -8,9 +8,9 @@ services:
     volumes:
      - ../rich/:/app
     expose:
-      - 8000
+      - 8800
     ports:
-      - 8000:8000
+      - 8800:8800
     environment:
       - TALARON_URI=http://172.23.0.6:3500
     entrypoint: /app/entrypoint.sh
